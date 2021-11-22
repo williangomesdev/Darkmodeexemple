@@ -369,3 +369,51 @@ a.btn {
   color: var(--white);
   font-size: 1rem;
 }
+
+.testimonials .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  margin: 4rem 0;
+}
+.testimonials .content .testimonialBx {
+  background: var(--white2);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.313rem 0.938rem rgba(0, 0, 0, 0.05);
+  padding: 1.25rem;
+}
+.testimonials .content .testimonialBx .imgBx {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 0.625rem;
+}
+.testimonials .content .testimonialBx .imgBx img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonials .content .testimonialBx p {
+  font-style: italic;
+}
+.testimonials .content .testimonialBx h4 {
+  text-align: right;
+  margin-top: 1.25rem;
+  letter-spacing: 0.125rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+  border-right: 4px solid var(--black);
+  padding-right: 0.625rem;
+  text-transform: uppercase;
+}
+.testimonials .content .testimonialBx h4 span {
+  text-transform: initial;
+  color: #aaa;
+  letter-spacing: 0.063rem;
+  font-weight: 300;
+  font-size: 0.7rem;
+}
