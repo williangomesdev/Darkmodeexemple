@@ -417,3 +417,60 @@ a.btn {
   font-weight: 300;
   font-size: 0.7rem;
 }
+.contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .contactForm {
+  position: relative;
+  width: 43.75rem;
+  margin-top: 5rem;
+}
+.contact .contactForm .row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1.25rem;
+  grid-gap: 2rem;
+}
+.contact .contactForm .row input,
+.contact .contactForm .row2 textarea {
+  width: 100%;
+  padding: 0.625rem;
+  outline: none;
+  color: var(--black);
+  background: var(--white2);
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.contact .contactForm .row2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.contact .contactForm .row2 textarea {
+  resize: none;
+  height: 12.5rem;
+}
+
+.contact .contactForm .row2 input[type="submit"] {
+  background: var(--black2);
+  color: var(--white);
+  padding-left: 1.87rem;
+  padding-right: 1.87rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  max-width: 9.375rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+}
