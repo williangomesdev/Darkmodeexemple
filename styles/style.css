@@ -12,7 +12,14 @@
   --black2: #333;
   --white: #fff;
   --white2: #fff;
-  --blue: #2196f3;
+}
+
+/*Cores dark mode*/
+.dark {
+  --black: #fff;
+  --black2: #444;
+  --white: #333;
+  --white2: #444;
 }
 
 body {
@@ -35,6 +42,10 @@ body {
   align-items: center;
   overflow: hidden;
   transition: width 0.5s, left 0.5s;
+}
+
+.dark .navigation {
+  border-right: 0.1rem solid rgba(0, 0, 0, 0.5);
 }
 
 .navigation.active {
@@ -82,7 +93,7 @@ body {
 }
 
 .main.active {
-  width: calc(100% -0rem);
+  width: calc(100% - 0rem);
   left: 0rem;
 }
 
@@ -100,6 +111,10 @@ body {
   align-items: center;
   z-index: 1000;
   transition: width 0.5s, left 0.5s;
+}
+
+.dark .main .topbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .main .topbar.active {
@@ -175,7 +190,9 @@ h3 {
 p {
   color: #777;
 }
-
+.dark p {
+  color: var(--black);
+}
 a.btn {
   position: relative;
   display: inline-block;
@@ -192,6 +209,9 @@ a.btn {
 }
 
 /*após terminar o projeto adicionar o arquivo CV no projeto 26:57 a 29:15*/
+.dark .btn:hover {
+  background: #2196f3;
+}
 
 .socialMedia {
   position: absolute;
@@ -215,6 +235,10 @@ a.btn {
   text-decoration: none;
   color: var(--black);
   font-size: 1.2rem;
+}
+
+.dark .socialMedia li a:hover {
+  background: #2196f3;
 }
 
 .socialMedia li a:hover {
@@ -287,16 +311,24 @@ a.btn {
 
 .services .content .serviceBox {
   border: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 5rem 2rem;
+  padding: 3.125rem 1.25rem;
   display: flex;
-  background: var(--white);
+  background: var(--white2);
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+.dark .services .content .serviceBox:hover {
+  background: #2196f3;
+}
+
 .services .content .serviceBox img {
-  margin: 5rem;
+  max-width: 3.125rem;
+}
+
+.dark .services .content .serviceBox img {
+  filter: invert(1);
 }
 
 .services .content .serviceBox h2 {
@@ -362,6 +394,10 @@ a.btn {
   align-items: center;
 }
 
+.dark .projects .content .workBx .textBx{
+  background: #444;
+}
+
 .projects .content .workBx:hover .textBx {
   transform: translateY(0);
 }
@@ -370,6 +406,12 @@ a.btn {
   color: var(--white);
   font-size: 1rem;
 }
+
+.dark .projects .content .workBx .textBx h3{
+  color: var(--black);
+}
+
+/* Testeunhas */
 
 .testimonials .content {
   display: grid;
@@ -382,6 +424,10 @@ a.btn {
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 0.313rem 0.938rem rgba(0, 0, 0, 0.05);
   padding: 1.25rem;
+}
+
+.dark .testimonials .content .testimonialBx:hover{
+  background:#2196f3
 }
 .testimonials .content .testimonialBx .imgBx {
   position: relative;
@@ -461,7 +507,7 @@ a.btn {
 
 .contact .contactForm .row2 input[type="submit"] {
   background: var(--black2);
-  color: var(--white);
+  color: #fff;
   padding-left: 1.87rem;
   padding-right: 1.87rem;
   padding-top: 0.625rem;
@@ -476,6 +522,10 @@ a.btn {
   border: none;
 }
 
+.contact .contactForm .row2 input[type="submit"]:hover{
+  background: #2196f3;
+}
+
 .copyright {
   position: relative;
   bottom: 0;
@@ -483,8 +533,56 @@ a.btn {
   text-align: center;
 }
 
+.dark .copyright{
+  color: var(--black);
+}
+
+/* Dark e light mode switch */
+.themeSwitch {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.themeSwitch::before {
+  content: "\f186";
+  font-family: fontAwesome;
+}
+
+.dark .themeSwitch::before {
+  content: "\f185";
+  font-family: fontAwesome;
+}
+
+.themeSwitch::after {
+  content: "Trocar para modo Dark";
+  position: absolute;
+  left: 40px;
+  font-size: 0.7rem;
+  color: var(--black);
+  white-space: nowrap;
+  letter-spacing: 0.0625rem;
+  pointer-events: none;
+}
+
+.dark .themeSwitch::after {
+  content: "Trocar para modo Light";
+}
+
 /* Responsive */
 @media (max-width: 992px) {
+  .themeSwitch{
+    left: 1.25rem;
+  }
   .navigation {
     left: -100%;
   }
@@ -560,11 +658,11 @@ a.btn {
     margin-bottom: 2.5rem;
   }
 
-  .contact .contactForm{
+  .contact .contactForm {
     width: 100%;
   }
 
-  .copyright{
+  .copyright {
     padding: 0.625rem 1.25rem;
   }
 }
