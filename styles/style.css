@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", "sans-serif";
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -33,7 +34,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: 0.5s;
+  transition: width 0.5s, left 0.5s;
 }
 
 .navigation.active {
@@ -67,7 +68,7 @@ body {
   opacity: 0.5;
 }
 
-navigation ul li a:hover {
+.navigation ul li a:hover {
   opacity: 1;
 }
 
@@ -473,4 +474,97 @@ a.btn {
   text-transform: uppercase;
   cursor: pointer;
   border: none;
+}
+
+.copyright {
+  position: relative;
+  bottom: 0;
+  padding: 0.625rem 2.5rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .navigation {
+    left: -100%;
+  }
+
+  .navigation.active {
+    left: 0;
+    width: 100%;
+  }
+
+  .navigation ul {
+    padding: 1.25rem, 1.25rem;
+  }
+
+  .main {
+    width: 100%;
+    left: 0;
+  }
+
+  .main.active {
+    left: 100%;
+  }
+
+  .main .topbar {
+    width: 100%;
+    left: 0;
+    padding: 0 1.25rem;
+  }
+
+  .banner .imgBx {
+    width: 15.625rem;
+    height: 15.625rem;
+  }
+
+  .banner h3,
+  .banner p {
+    text-align: center;
+  }
+
+  .adjust {
+    padding: 0 1.25rem;
+    padding-top: 5rem;
+  }
+
+  .about .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about .content .textBox {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .about .content .imgBx {
+    margin-top: 1.25rem;
+  }
+
+  .services .content,
+  .projects .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .services .content,
+  .projects .content,
+  .testimonials .content,
+  .contact .contactForm .row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .contact {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact .contactForm{
+    width: 100%;
+  }
+
+  .copyright{
+    padding: 0.625rem 1.25rem;
+  }
 }
